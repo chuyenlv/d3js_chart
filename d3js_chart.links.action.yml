@@ -1,0 +1,5 @@
+entity.population.add_form:
+  route_name: entity.population.add_form
+  title: 'Add Population'
+  appears_on:
+    - entity.population.collection

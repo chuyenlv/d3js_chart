@@ -1,0 +1,8 @@
+
+d3js_chart.population_getCSV:
+  path: '/d3js/chart/csv'
+  defaults:
+    _controller: '\Drupal\d3js_chart\Controller\Population::getCSV'
+    _title: 'Get data CSV'
+  requirements:
+    _permission: 'access content'

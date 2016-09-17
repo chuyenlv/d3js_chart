@@ -1,0 +1,5 @@
+name: D3 Js chart
+type: module
+description: Example build chart by d3js.
+core: 8.x
+package: Chart

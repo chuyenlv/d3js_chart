@@ -1,0 +1,22 @@
+add population entities:
+  title: 'Create new Population entities'
+
+administer population entities:
+  title: 'Administer Population entities'
+  description: 'Allow to access the administration form to configure Population entities.'
+  restrict access: true
+
+delete population entities:
+  title: 'Delete Population entities'
+
+edit population entities:
+  title: 'Edit Population entities'
+
+access population overview:
+  title: 'Access the Population overview page'
+
+view published population entities:
+  title: 'View published Population entities'
+
+view unpublished population entities:
+  title: 'View unpublished Population entities'

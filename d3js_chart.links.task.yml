@@ -1,0 +1,21 @@
+# Population routing definition
+population.settings_tab:
+  route_name: population.settings
+  title: 'Settings'
+  base_route: population.settings
+entity.population.canonical:
+  route_name: entity.population.canonical
+  base_route: entity.population.canonical
+  title: 'View'
+
+entity.population.edit_form:
+  route_name: entity.population.edit_form
+  base_route: entity.population.canonical
+  title: Edit
+
+entity.population.delete_form:
+  route_name:  entity.population.delete_form
+  base_route:  entity.population.canonical
+  title: Delete
+  weight: 10
+

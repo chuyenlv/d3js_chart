@@ -1,0 +1,11 @@
+# Population menu items definition
+entity.population.collection:
+  title: 'Add new Population'
+  route_name: entity.population.add_form
+  weight: 100
+
+population.admin.structure.settings:
+  title: Population settings
+  description: 'Configure Population entities'
+  route_name: population.settings
+  parent: system.admin_structure
