@@ -8,9 +8,12 @@
   'use strict';
   Drupal.behaviors.d3jsChart = {
     attach: function (context) {
+      var width_wrapper = $("#d3-js-chart").width();
+      var height_wrapper = width_wrapper * 0.6;
+
       var margin = {top: 20, right: 20, bottom: 30, left: 40},
-          width = 960 - margin.left - margin.right,
-          height = 500 - margin.top - margin.bottom;
+          width = width_wrapper - margin.left - margin.right,
+          height = height_wrapper - margin.top - margin.bottom;
 
       var x0 = d3.scale.ordinal()
           .rangeRoundBands([0, width], .1);
@@ -35,7 +38,7 @@
       var svg = d3.select("#d3-js-chart").append("svg")
           .attr("width", width + margin.left + margin.right)
           .attr("height", height + margin.top + margin.bottom)
-        .append("g")
+          .append("g")
           .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
 
       d3.csv(drupalSettings.path.baseUrl + "d3js/chart/csv", function(error, data) {
@@ -59,7 +62,7 @@
         svg.append("g")
             .attr("class", "y axis")
             .call(yAxis)
-          .append("text")
+            .append("text")
             .attr("transform", "rotate(-90)")
             .attr("y", 6)
             .attr("dy", ".71em")
@@ -68,13 +71,13 @@
 
         var state = svg.selectAll(".state")
             .data(data)
-          .enter().append("g")
+            .enter().append("g")
             .attr("class", "state")
             .attr("transform", function(d) { return "translate(" + x0(d.State) + ",0)"; });
 
         state.selectAll("rect")
             .data(function(d) { return d.ages; })
-          .enter().append("rect")
+            .enter().append("rect")
             .attr("width", x1.rangeBand())
             .attr("x", function(d) { return x1(d.name); })
             .attr("y", function(d) { return y(d.value); })
@@ -83,7 +86,7 @@
 
         var legend = svg.selectAll(".legend")
             .data(ageNames.slice().reverse())
-          .enter().append("g")
+            .enter().append("g")
             .attr("class", "legend")
             .attr("transform", function(d, i) { return "translate(0," + i * 20 + ")"; });
 
